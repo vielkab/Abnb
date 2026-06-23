@@ -10,3 +10,4 @@ var db = dbServer.AddDatabase("abnbdb");
 builder.AddProject<Projects.Api>("Api").WithExternalHttpEndpoints().WithReference(db).WaitFor(db);
 
 builder.Build().Run();
+

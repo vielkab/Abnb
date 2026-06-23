@@ -1,5 +1,6 @@
 using Domain;
 using Microsoft.EntityFrameworkCore;
+
 namespace Infrastructure.Data;
 
 public class ApplicationContext : DbContext
@@ -9,4 +10,9 @@ public class ApplicationContext : DbContext
 
     public DbSet<Departamento> Departamentos { get; set; }
 
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationContext).Assembly);
+    }
 }

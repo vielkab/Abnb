@@ -27,9 +27,9 @@ if (app.Environment.IsDevelopment())
     if (!dbContext.Departamentos.Any())
     {
         dbContext.Departamentos.AddRange(
-            new Departamento { Nombre = "Departamento 1" },
-            new Departamento { Nombre = "Departamento 2" },
-            new Departamento { Nombre = "Departamento 3" }
+            new Departamento { Nombre = new Nombre("Departamento 1") },
+            new Departamento { Nombre = new Nombre("Departamento 2") },
+            new Departamento { Nombre = new Nombre("Departamento 3") }
         );
         dbContext.SaveChanges();
     }
